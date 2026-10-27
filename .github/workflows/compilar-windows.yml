@@ -1,0 +1,40 @@
+name: Construir instalador Windows
+
+on:
+  workflow_dispatch:
+
+jobs:
+  windows:
+    name: Compilar instalador NSIS
+    runs-on: windows-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Descargar el codigo
+        uses: actions/checkout@v4
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Preparar Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Cache de Rust
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri -> target
+
+      - name: Instalar dependencias de Tauri
+        run: npm install
+
+      - name: Compilar MARGEN para Windows
+        run: npm run tauri -- build --bundles nsis
+
+      - name: Guardar instalador para descargar
+        uses: actions/upload-artifact@v4
+        with:
+          name: MARGEN-instalador-Windows
+          path: src-tauri/target/release/bundle/nsis/*-setup.exe
+          if-no-files-found: error
