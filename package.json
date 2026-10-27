@@ -1,0 +1,12 @@
+{
+  "name": "margen-escritorio",
+  "private": true,
+  "version": "0.9.0",
+  "description": "Base de escritorio de MARGEN (primer ensayo de instalador)",
+  "scripts": {
+    "tauri": "tauri"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.0.0"
+  }
+}

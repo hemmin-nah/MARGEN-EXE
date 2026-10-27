@@ -1,0 +1,33 @@
+MARGEN — PROYECTO COMPLETO PARA GITHUB
+=====================================
+
+Este ZIP incluye la carpeta que GitHub Actions necesita:
+
+.github/
+  workflows/
+    compilar-windows.yml
+
+IMPORTANTE: .github EMPIEZA POR UN PUNTO.
+En el Explorador de Windows, ve a Ver > Mostrar > Elementos ocultos
+si no la ves. NO cambies el nombre de esa carpeta.
+
+CÓMO SUBIRLO AL REPOSITORIO:
+
+1. Descomprime este ZIP en una carpeta local.
+2. Abre esa carpeta y comprueba que están .github, src-tauri, web,
+   package.json y el resto de archivos.
+3. En tu repositorio GitHub, entra en Code > Add file > Upload files.
+4. Arrastra las carpetas y archivos CONTENIDOS en la carpeta
+   descomprimida, no el archivo ZIP.
+5. Comprueba que la subida incluye .github/workflows/compilar-windows.yml.
+6. Confirma con Commit changes en la rama main.
+7. Ve a Actions. Busca «Construir instalador Windows».
+
+SI YA SUBISTE LOS DEMÁS ARCHIVOS:
+No hace falta repetirlos. Basta con subir la carpeta .github o crear
+el archivo .github/workflows/compilar-windows.yml desde GitHub.
+
+NUNCA subas a GitHub tus novelas, copias JSON o datos privados.
+Mantén MARGEN 0.6 instalado y guarda tu copia de seguridad.
+
+Estado: prueba de compilación de MARGEN, aún no versión 1.0 estable.

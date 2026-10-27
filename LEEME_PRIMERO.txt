@@ -1,0 +1,37 @@
+MARGEN - BASE DE ESCRITORIO PARA WINDOWS
+
+ESTO NO ES TODAVIA MARGEN 1.0 TERMINADO.
+Esta entrega prepara el primer instalador nativo mediante Tauri y GitHub Actions.
+Contiene la interfaz de MARGEN 0.6 sin redisenos, dentro de un proyecto Tauri.
+El guardado de esta prueba sigue utilizando IndexedDB; aun NO utiliza SQLite.
+
+IMPORTANTE: NO SUBAS A GITHUB LA COPIA DE SEGURIDAD JSON DE TUS LIBROS.
+Conserva instalada la version 0.6 original; no la desinstales.
+
+PASO 2: CREAR REPOSITORIO PRIVADO
+1) Entra en https://github.com/new e inicia sesion (puedes crear cuenta gratis).
+2) Nombre: margen-escritorio
+3) Visibilidad: Private / Privado
+4) No marques 'Add a README file', .gitignore ni licencia.
+5) Pulsa Create repository.
+
+PASO 3: SUBIR CODIGO
+1) Descomprime este ZIP.
+2) Desde el repositorio vacio, pulsa 'uploading an existing file'.
+3) Arrastra AL AREA DE SUBIDA los archivos y carpetas de la carpeta extraida:
+   .github, src-tauri, web, package.json, .gitignore y los LEEME.
+   Deben quedar como ARCHIVOS Y CARPETAS, no como ZIP.
+4) Escribe como mensaje 'Base de MARGEN escritorio' y pulsa Commit changes.
+
+PASO 4: PROBAR GENERACION DEL INSTALADOR (te lo guiare despues)
+En GitHub > Actions > Construir instalador Windows > Run workflow.
+Cuando termine, desde la ejecucion descarga el artefacto MARGEN-instalador-Windows.
+En Windows se habra creado un instalador NSIS .exe. No requiere Python.
+
+PRIMER OBJETIVO: verificar compilacion, instalacion y apertura.
+El instalador no esta firmado digitalmente: Windows SmartScreen puede avisar.
+NO RESTAURES TUS LIBROS AUN EN ESTA PRIMERA PRUEBA: primero comprobaremos
+que las copias de seguridad y el guardado funcionan bien en la app empaquetada.
+
+Cuando funcione la base, pasaremos al nuevo almacenamiento SQLite,
+a la importacion segura de copias JSON y a las pruebas de regresion de MARGEN 0.6.

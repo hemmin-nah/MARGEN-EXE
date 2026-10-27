@@ -1,0 +1,16 @@
+[package]
+name = "margen"
+version = "0.9.0"
+description = "MARGEN - estudio de escritura"
+authors = ["Proyecto MARGEN"]
+edition = "2021"
+
+[lib]
+name = "margen_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
